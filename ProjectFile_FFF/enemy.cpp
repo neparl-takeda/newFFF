@@ -44,7 +44,7 @@ HRESULT InitEnemy(int StageNum)
 	switch (StageNum)
 	{
 	default:
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_zarigani_dummy.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_zarigani_dummy.png");
 			Enemy.size = D3DXVECTOR2(ENEMY00_SIZE_X, ENEMY00_SIZE_Y);
 			EnemySpYa = 0.925f;
 			EnemySpYt = 25.0f;
@@ -52,21 +52,21 @@ HRESULT InitEnemy(int StageNum)
 
 		case 0:
 			// ● チュートリアル ザリガニ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_zarigani_dummy.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_zarigani_dummy.png");
 			Enemy.size = D3DXVECTOR2(ENEMY00_SIZE_X, ENEMY00_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;
 			break;
 		case 1:
 			// ● ザリガニ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_zarigani.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_zarigani.png");
 			Enemy.size = D3DXVECTOR2(ENEMY01_SIZE_X, ENEMY01_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;
 			break;
 		case 2:
 			// ● ウナギ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_unagi.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_unagi.png");
 			Enemy.size = D3DXVECTOR2(ENEMY02_SIZE_X, ENEMY02_SIZE_Y);
 			UnagiPosY = 200;
 			EnemySpYa = 0.9625f;
@@ -74,7 +74,7 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 3:
 			// ● タコ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_octopus.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_octopus.png");
 			Enemy.size = D3DXVECTOR2(ENEMY03_SIZE_X, ENEMY03_SIZE_Y-300.0f);
 			UnagiPosY = -80;
 			EnemySpYa = 0.9575f;
@@ -82,7 +82,7 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 4:
 			// ● サメ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_shark.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_shark.png");
 			Enemy.size = D3DXVECTOR2(ENEMY04_SIZE_X, ENEMY04_SIZE_Y);
 			UnagiPosY = 80;
 			EnemySpYa = 0.976f;
@@ -90,21 +90,21 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 5:
 			// ● ししゃも
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_shishamo muscle.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_shishamo muscle.png");
 			Enemy.size = D3DXVECTOR2(ENEMY05_SIZE_X, ENEMY05_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;
 			break;
 		case 6:
 			// ● カース・オブ・ザリガニ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_zarigani_shirokuro.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_zarigani_shirokuro.png");
 			Enemy.size = D3DXVECTOR2(ENEMY06_SIZE_X, ENEMY06_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;
 			break;
 		case 7:
 			// ● うな重
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_unagidon_yankee.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_unagidon_yankee.png");
 			Enemy.size = D3DXVECTOR2(ENEMY07_SIZE_X, ENEMY07_SIZE_Y);
 			UnagiPosY = -100;
 			EnemySpYa = 0.96f;
@@ -112,7 +112,7 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 8:
 			// ● 塩辛武者
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_shiokara_musha.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_shiokara_musha.png");
 			Enemy.size = D3DXVECTOR2(ENEMY08_SIZE_X, ENEMY08_SIZE_Y);
 			UnagiPosY = -100;
 			EnemySpYa = 0.96f;
@@ -120,7 +120,7 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 9:
 			// ● ジョージ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_shark_yankee.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_shark_yankee.png");
 			Enemy.size = D3DXVECTOR2(ENEMY09_SIZE_X, ENEMY09_SIZE_Y);
 			UnagiPosY = 100;
 			EnemySpYa = 0.9765f;
@@ -128,21 +128,21 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 10:
 			// ● フルアーマー・ザリガニ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_mm meka(combinated).png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_mm meka(combinated).png");
 			Enemy.size = D3DXVECTOR2(ENEMY10_SIZE_X, ENEMY10_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;
 			break;
 		case 11:
 			// ● プロトタイプ・ザリガニ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_prot.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_prototype.png");
 			Enemy.size = D3DXVECTOR2(ENEMY11_SIZE_X, ENEMY11_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;
 			break;
 		case 12:
 			// ● ウナギドラ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_unagydra.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_unagydra.png");
 			Enemy.size = D3DXVECTOR2(ENEMY12_SIZE_X, ENEMY12_SIZE_Y);
 			UnagiPosY = 200;
 			EnemySpYa = 0.9625f;
@@ -150,14 +150,14 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 13:
 			// ● 復讐同盟
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_alliance.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_alliance.png");
 			Enemy.size = D3DXVECTOR2(ENEMY13_SIZE_X, ENEMY13_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;
 			break;
 		case 14:
 			// ● カース・オブ・ジョージ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_jawge_curse.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_jawge_curse.png");
 			Enemy.size = D3DXVECTOR2(ENEMY14_SIZE_X, ENEMY14_SIZE_Y);
 			UnagiPosY = 80;
 			EnemySpYa = 0.9765f;
@@ -165,7 +165,7 @@ HRESULT InitEnemy(int StageNum)
 			break;
 		case 15:
 			// ● ガネーシャモ
-			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/chara_ganeshamo.png");
+			g_TextureEnemyID = LoadTexture((char*)"data/TEXTURE/ENEMY/chara_ganeshamo.png");
 			Enemy.size = D3DXVECTOR2(ENEMY15_SIZE_X, ENEMY15_SIZE_Y);
 			EnemySpYa = 0.95275f;
 			EnemySpYt = 25.0f;

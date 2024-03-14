@@ -50,7 +50,7 @@ HRESULT InitBG(int StageNum)
 	g_Bg[1].pos		= D3DXVECTOR2(CENTER_X, CENTER_Y + SCREEN_HEIGHT * 2.0f);
 	g_Bg[1].size	= D3DXVECTOR2(SCREEN_WIDTH, SCREEN_HEIGHT * 2.0f);
 
-	g_TextureBg			= LoadTexture((char*)"data/TEXTURE/BG_River.png");
+	g_TextureBg			= LoadTexture((char*)"data/TEXTURE/BG/BG_River.png");
 	g_TextureUIBack		= LoadTexture((char*)"data/TEXTURE/UI_Back_B.png");
 	g_TextureUICtrl		= LoadTexture((char*)"data/TEXTURE/UI_Ctrl_C.png");
 	g_TextureUICtrlKey	= LoadTexture((char*)"data/TEXTURE/UI_Ctrl_A.png");
@@ -58,52 +58,52 @@ HRESULT InitBG(int StageNum)
 	switch (StageNum)
 	{
 	default:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG_River.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/BG_River.png");
 		break;
 
 	case 0:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_Tuto_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_Tuto_large.png");
 		tutoFlag = true;
 		break;
 
 	case 1:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_SeaCity_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_SeaCity_large.png");
 		break;
 
 	case 2:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_River_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_River_large.png");
 		break;
 
 	case 3:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_SeaRock_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_SeaRock_large.png");
 		break;
 
 	case 4:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG_Bubbles.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/BG_Bubbles.png");
 		break;
 
 	case 5:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_River_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_River_large.png");
 		break;
 
 	case 6:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_River_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_River_large.png");
 		break;
 
 	case 7:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_SeaCity_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_SeaCity_large.png");
 		break;
 
 	case 8:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_SeaRock_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_SeaRock_large.png");
 		break;
 
 	case 9:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG_Bubbles.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/BG_Bubbles.png");
 		break;
 
 	case 10:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG_Space_Large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/BG_Space_Large.png");
 		g_Bg[0].pos		= D3DXVECTOR2(SCREEN_WIDTH, SCREEN_HEIGHT);
 		g_Bg[0].size	= D3DXVECTOR2(SCREEN_WIDTH * 4.25f, SCREEN_HEIGHT * 4.25f);
 		g_Bg[0].spdY	= 0.0f;
@@ -112,23 +112,23 @@ HRESULT InitBG(int StageNum)
 		break;
 
 	case 11:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_Elevator_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_Elevator_large.png");
 		break;
 
 	case 12:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_River_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_River_large.png");
 		break;
 
 	case 13:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_SeaRock_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_SeaRock_large.png");
 		break;
 
 	case 14:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG_Bubbles.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/BG_Bubbles.png");
 		break;
 
 	case 15:
-		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/Bg_River_large.png");
+		g_TextureBg		= LoadTexture((char*)"data/TEXTURE/BG/Bg_River_large.png");
 		break;
 
 	}

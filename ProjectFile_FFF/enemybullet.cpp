@@ -44,7 +44,7 @@ static	char *g_TextureEnemyBulletHpName = (char*)"data\\TEXTURE\\bullet_hp.png";
 
 int g_EnemyBulletTransTex;
 static	ID3D11ShaderResourceView* g_TextureEnemyBulletTrans;
-static	char *g_TextureEnemyBulletTransName = (char*)"data\\TEXTURE\\chara_octopus.png";//テクスチャ名
+static	char *g_TextureEnemyBulletTransName = (char*)"data/TEXTURE/ENEMY/chara_octopus.png";//テクスチャ名
 
 //裏用
 static	ID3D11ShaderResourceView* g_TextureEnemyBulletSlash;
