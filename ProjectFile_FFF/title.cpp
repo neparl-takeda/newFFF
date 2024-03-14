@@ -74,7 +74,7 @@ UIText* g_UITextVersion{};
 HRESULT InitTitle(void)
 {
 	//テクスチャを読み込んで識別子を受け取る
-	g_TextureBgTitle   = LoadTexture((char*)"data/TEXTURE/Bg_Bubbles.png");
+	g_TextureBgTitle   = LoadTexture((char*)"data/TEXTURE/BG/Bg_Bubbles.png");
 	g_TextureFFF	   = LoadTexture((char*)"data/TEXTURE/fff.png");
 	g_TextureLine	   = LoadTexture((char*)"data/TEXTURE/fade_white.png");
 	g_TextureCommand   = LoadTexture((char*)"data/TEXTURE/command.png");
