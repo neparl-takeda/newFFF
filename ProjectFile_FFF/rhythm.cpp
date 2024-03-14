@@ -237,11 +237,11 @@ HRESULT InitRhythm(int stagenum)
 
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = -1;
+		errors = -1;	//åªçs
 		sp = 12.0f;
 		NowBPM = BPM1;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
-		BGMError = 250;
+		BGMError = 120;
 		break;
 
 	case 13://MYTHIC //ïúèQ
