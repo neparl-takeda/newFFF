@@ -11,6 +11,9 @@
 #include "effect.h"
 #include "collision.h"
 
+//#define	BULLET_STRONG_DAMAGE (250)	//現行
+#define	BULLET_STRONG_DAMAGE (150)		//テスト
+
 //================================
 //グローバル変数
 //================================
@@ -146,7 +149,7 @@ int Damage(int type)
 		for (int i = 0; i < n; i++) {
 			m *= 0.9f;
 		}
-		damage = (int)(250 * m);
+		damage = (int)(BULLET_STRONG_DAMAGE * m);
 		return damage;
 	}
 	//非発動時のデフォルト数値
