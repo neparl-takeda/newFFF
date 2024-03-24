@@ -71,8 +71,6 @@ static int g_TextureHpB;	//テクスチャのやつ
 static int g_TextureHpIcon; //テクスチャのやつ
 static int g_TextureShield;
 
-//static int g_TextureCText;	//テクスチャのやつ
-
 
 static int g_SE_Bullet;		//弾サウンド
 static int g_SE_Damage;		//ダメージサウンド
@@ -187,10 +185,6 @@ void UpdatePlayer(void)
 		effectPos[10-i] = effectPos[10 - i - 1];
 	}
 	effectPos[0] = g_Player.pos.x;
-
-	//****************************************************************************
-	//g_Player.hp = min(g_Player.hp += 1, PLAYER_HP_DEFAULT);	//デバッグ用HP自動回復
-	//****************************************************************************
 
 	//体力0でゲームオーバー
 	if (g_Player.hp <= 0)
@@ -337,6 +331,12 @@ void UpdatePlayer(void)
 
 	D3DXVECTOR2 uiTextPos = { NOTESLANE_POS_X, NOTESLANE_POS_Y - 75.0f + (goodPosY) };
 	g_UITextGood->SetPosition(uiTextPos);
+
+	//デバッグ用
+	if (GetDebugFlag())
+	{
+		g_Player.hp = min(g_Player.hp += 1, PLAYER_HP_DEFAULT);	//デバッグ用HP自動回復
+	}
 }
 
 //=============================================================================

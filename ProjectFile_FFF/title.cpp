@@ -140,6 +140,13 @@ HRESULT InitTitle(void)
 	uiTextColor = { 1.0f,1.0f,1.0f,1.0f };
 	g_UITextVersion->SetUITextPram(uiTextPos, uiTextSize, uiTextColor, (char*)"1.2.1", FONT_GRADATION);
 
+	if (GetDebugFlag())
+	{
+		uiTextPos	= { 400.0f, 1040.0f, };
+		uiTextColor = { 1.0f,0.0f,0.0f,1.0f };
+		g_UITextVersion->SetUITextPram(uiTextPos, uiTextSize, uiTextColor, (char*)"1.2.1 DEBUG MODE", FONT_GRADATION);
+	}
+
 	return S_OK;
 }
 

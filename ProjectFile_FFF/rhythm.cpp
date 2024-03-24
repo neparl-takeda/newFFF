@@ -15,12 +15,15 @@
 
 #include "Config.h"
 
+#include "inputx.h"
+#include "UIText.h"
 
 //曲のBPMのパターン
 #define		BPM1				(150)
 #define		BPM2				(120)
 #define		BPM3				(90)
-#define		BPM4				(179.0f)
+#define		BPM4				(185.0f)
+#define		BPM5				(205.8f)
 
 int			NowBPM;
 //float		NowBPM;
@@ -40,6 +43,7 @@ float		tutorialerror;
 NOTES		Notes[NOTES_MAX];
 NOTESLANE	NotesLane;
 
+UIText* g_UITextDebugBPM{};
 
 //テクスチャ情報の保存変数
 static	ID3D11ShaderResourceView	*g_TextureNotes;
@@ -78,7 +82,8 @@ HRESULT InitRhythm(int stagenum)
 	char	filename12[] = "data\\BGM\\12_Unagydra_150.wav";
 	char	filename13[] = "data\\BGM\\13_Revenge_150.wav";
 	char	filename14[] = "data\\BGM\\14_Jawge_150.wav";
-	char	filename15[] = "data\\BGM\\15_Ganeshamo_150.wav";
+	//char	filename15[] = "data\\BGM\\15_Ganeshamo_150.wav";
+	char	filename15[] = "data\\BGM\\test.wav";
 
 	tutorialerror = 0;
 	switch (stagenum)
@@ -263,20 +268,26 @@ HRESULT InitRhythm(int stagenum)
 
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = 4;
+		errors = -1;
 		sp = 12.0f;
 		NowBPM = BPM1;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
-		BGMError = -250;
+		BGMError = 120;
 		break;
 
 	case 15://MYTHIC //ガネーシャモ
 		
-		GameSoundNo = LoadSound(filename5);
+		GameSoundNo = LoadSound(filename15);
 
+		//Notestipindex1 = 2;
+		//indexNum = 8;
+		//errors = 0;
+		//sp = 12.0f;
+		//NowBPM = BPM1;
+		//NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = 0;
+		errors = -1;
 		sp = 12.0f;
 		NowBPM = BPM1;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
@@ -377,11 +388,40 @@ HRESULT InitRhythm(int stagenum)
 	Frame = 0;
 	
 	Notestipindex2 = 0;
+
+	if (GetDebugFlag())
+	{
+		//UiText "DebugBPM"
+		g_UITextDebugBPM = new UIText;
+		g_UITextDebugBPM->Init();
+		D3DXVECTOR2 uiTextPos	= { 300.0f, 800.0f };
+		D3DXVECTOR2 uiTextSize	= { 100.0f ,100.0f };
+		D3DXCOLOR   uiTextColor = { 1.0f,0.0f,0.0f,1.0f };
+		g_UITextDebugBPM->SetUITextPram(uiTextPos, uiTextSize, uiTextColor, (char*)"000", FONT_NORMAL);
+	}
 	return	S_OK;
 }
 
 void UpdateRhythm()
 {
+	if (GetDebugFlag())
+	{
+		//デバッグ用
+		if (IsButtonGroupTriggered(KEY_GROUP::KEY_UP))
+		{
+			NowBPM++;
+			NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		}
+		//デバッグ用
+		if (IsButtonGroupTriggered(KEY_GROUP::KEY_DOWN))
+		{
+			NowBPM--;
+			NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		}
+	}
+
+
+
 	CONFIG* pConfig = GetConfig();
 
 	if (Frame == 120)
@@ -442,6 +482,7 @@ void UpdateRhythm()
 			Rhythmflg = false;
 		}
 	}
+
 }
 
 void UninitRhythm()
@@ -481,6 +522,12 @@ void DrawRhythm()
 		0.0f, 0.0f, 1.0f, 1.0f, D3DXCOLOR(0.3f, 0.9f, 0.3f, 1.0f));
 	DrawSpriteColor(g_TextureNameRunPlayer, 1700.0f, 700.0f - ((Frame - 120) * (0.06f - ((float)BGMError / 120000)+ tutorialerror)), 20.0f, 60.0f,
 		0.0f, 0.0f, 1.0f, 1.0f, D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f));
+
+	if (GetDebugFlag())
+	{
+		TranslationTextDebugBPM();
+		g_UITextDebugBPM->Draw();		//UIText "DEBUG BPM"  描画
+	}
 }
 
 void SetNotes()
@@ -564,4 +611,32 @@ int BGM_RE()
 float GetGradation()
 {
 	return Gradationalf;
+}
+
+void TranslationTextDebugBPM()
+{
+	char scoreChar[256] = "---";
+
+	int bpm  = NowBPM;
+	int bpm2 = NowBPM;
+
+	int a[3] = { bpm / 100,(bpm - 100) / 10 , bpm};
+
+	a[0] = bpm / 100;
+	bpm -= a[0] * 100;
+	a[1] = bpm / 10;
+	bpm -= a[1] * 10;
+	a[2] = bpm;
+	//a[0] = (int)((bpm / 100) * 100);
+	//bpm - a[0];
+	//a[1] = (int)((bpm / 10) * 10);
+	//bpm - a[1];
+	//a[2] = (int)((bpm / 1) * 1);
+	//bpm - a[2];
+
+	for (int i = 0; i < 3; i++)
+	{
+		scoreChar[i] = a[i] + ASCII_NUM_0;
+	}
+	g_UITextDebugBPM->SetText(scoreChar);
 }

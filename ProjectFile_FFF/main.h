@@ -139,5 +139,7 @@ struct NOW_SCENE
 
 void SetScene(int nextScene);
 bool GetCtrl();
+bool GetDebugFlag();
 NOW_SCENE* GetNowScene();
 float frand(void);
+

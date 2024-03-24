@@ -67,6 +67,7 @@ NOW_SCENE g_NowScene;
 static int g_Scene;//現在実行されているシーン
 bool	CtrlKey;
 
+bool isDebugFlag = true;	//デバッグモードフラグ
 
 //=============================================================================
 // メイン関数
@@ -491,4 +492,9 @@ NOW_SCENE* GetNowScene()
 bool GetCtrl()
 {
 	return CtrlKey;
+}
+
+bool GetDebugFlag()
+{
+	return isDebugFlag;
 }

@@ -46,6 +46,8 @@ int		GetFreame();
 void	ReleaseNotes();
 bool	MusicEnd();
 
+void TranslationTextDebugBPM();
+
 int  BGM_RE();
 float GetGradation();
 
