@@ -279,13 +279,20 @@ HRESULT InitRhythm(int stagenum)
 		
 		GameSoundNo = LoadSound(filename15);
 
+		//Notestipindex1 = 2;
+		//indexNum = 8;
+		//errors = 0;
+		//sp = 12.0f;
+		//NowBPM = BPM1;
+		//NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		//BGMError = -20;
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = -1;	//åªçs
-		sp = 12.0f;
-		NowBPM = BPM1;
+		errors = 0;
+		sp = 10.8f;
+		NowBPM = BPM4;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
-		BGMError = 250;
+		BGMError = -525;
 		break;
 
 	default:
