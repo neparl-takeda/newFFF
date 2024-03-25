@@ -18,12 +18,16 @@
 #include "inputx.h"
 #include "UIText.h"
 
+//#define		NOTES_MAX			(6)
+#define		NOTES_MAX			(12)
+
 //曲のBPMのパターン
-#define		BPM_90				(90)
+#define		BPM_90				(90)	//未テスト
 #define		BPM_120				(120)
 #define		BPM_150				(150)
 #define		BPM_180				(180)
-#define		BPM_300				(300)
+#define		BPM_240				(240)	//未テスト
+#define		BPM_300				(300)	//キーボードだと無理かも
 
 int			NowBPM;
 //float		NowBPM;
