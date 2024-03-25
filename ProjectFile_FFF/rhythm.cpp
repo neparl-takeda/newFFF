@@ -19,11 +19,11 @@
 #include "UIText.h"
 
 //曲のBPMのパターン
-#define		BPM1				(150)
-#define		BPM2				(120)
-#define		BPM3				(90)
-#define		BPM4				(180)
-#define		BPM5				(165)
+#define		BPM_90				(90)
+#define		BPM_120				(120)
+#define		BPM_150				(150)
+#define		BPM_180				(180)
+#define		BPM_300				(300)
 
 int			NowBPM;
 //float		NowBPM;
@@ -92,12 +92,8 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename0);
 
-		Notestipindex1 = 1;
-		indexNum = 8;
 		errors = 0;
-		sp = 10.8f;
-		NowBPM = BPM2;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_120;
 		BGMError = -2400;
 		tutorialerror = 0.01f;
 		break;
@@ -105,36 +101,24 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename1);
 
-		Notestipindex1 = 1;
-		indexNum = 8;
 		errors = 0;
-		sp = 10.8f;
-		NowBPM = BPM2;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_120;
 		BGMError = -60;
 		break;
 	case 2://ウナギ
 
 		GameSoundNo = LoadSound(filename2);
 
-		Notestipindex1 = 1;
-		indexNum = 8;
 		errors = 2;
-		sp = 10.8f;
-		NowBPM = BPM2;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_120;
 		BGMError = 0;
 		break;
 	case 3://タコ
 
 		GameSoundNo = LoadSound(filename3);
 
-		Notestipindex1 = 1;
-		indexNum = 8;
 		errors = -4;
-		sp = 10.8f;
-		NowBPM = BPM2;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_120;
 		BGMError = 430;
 		break;
 	case 4://サメ
@@ -142,12 +126,8 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename4);
 
-		Notestipindex1 = 1;
-		indexNum = 8;
 		errors = 0;
-		sp = 10.8f;
-		NowBPM = BPM2;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_120;
 		BGMError = 0;
 		break;
 
@@ -155,84 +135,56 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename5);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = 0;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = -20;
 		break;
 	case 6://ザリガニ裏	//抜け殻
 
 		GameSoundNo = LoadSound(filename6);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = 0;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = 10;
 		break;
 	case 7://ウナギ裏	//うな重
 
 		GameSoundNo = LoadSound(filename7);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = 0;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = -10;
 		break;
 	case 8://タコ裏		//シオカラ武者
 
 		GameSoundNo = LoadSound(filename8);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = 0;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = -150;
 		break;
 	case 9://サメ裏		//ジョージ
 
 		GameSoundNo = LoadSound(filename9);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = -1;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = -170;
 		break;
 	case 10://シシャモ裏 //フルアーマーザリガニ
 
 		GameSoundNo = LoadSound(filename10);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = -1;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_300;
 		BGMError = 250;
 		break;
 	case 11://MYTHIC //プロトタイプザリガニ
 
 		GameSoundNo = LoadSound(filename11);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = 0;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = 500;
 		break;
 
@@ -240,12 +192,8 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename12);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = -1;	//現行
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = 120;
 		break;
 
@@ -253,12 +201,8 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename13);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = -1;
-		sp = 12.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;
 		BGMError = 120;
 		break;
 
@@ -266,12 +210,8 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename14);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = 0;
-		sp = 10.8f;
-		NowBPM = BPM4;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_180;
 		BGMError = -755;
 		break;
 
@@ -279,19 +219,8 @@ HRESULT InitRhythm(int stagenum)
 		
 		GameSoundNo = LoadSound(filename15);
 
-		//Notestipindex1 = 2;
-		//indexNum = 8;
-		//errors = 0;
-		//sp = 12.0f;
-		//NowBPM = BPM1;
-		//NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
-		//BGMError = -20;
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = 0;
-		sp = 10.8f;
-		NowBPM = BPM4;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_180;
 		BGMError = -525;
 		break;
 
@@ -299,15 +228,40 @@ HRESULT InitRhythm(int stagenum)
 
 		GameSoundNo = LoadSound(filename11);
 
-		Notestipindex1 = 2;
-		indexNum = 8;
 		errors = -1;
-		sp = 13.0f;
-		NowBPM = BPM1;
-		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+		NowBPM = BPM_150;	
 		BGMError = 250;
 		break;
 	}
+
+	switch (NowBPM)
+	{
+	case BPM_90:
+		Notestipindex1 = 1;		sp = 10.8f;
+		break;
+
+	case BPM_120:
+		Notestipindex1 = 1;		sp = 10.8f;
+		break;
+
+	case BPM_150:
+		Notestipindex1 = 2;		sp = 12.0f;
+		break;
+
+	case BPM_180:
+		Notestipindex1 = 2;		sp = 10.8f;
+		break;
+
+	case BPM_300:
+		Notestipindex1 = 2;		sp = 10.8f;
+		break;
+
+	default:
+		Notestipindex1 = 2;		sp = 12.0f;
+		break;
+	}
+	NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
+	indexNum = 8;
 
 	for (int i = 0; i < NOTES_MAX; i += 2) 
 	{

@@ -120,9 +120,14 @@ HRESULT InitSkillSelect(void)
 	D3DXVECTOR2 uiTextPos	= { CENTER_X, CENTER_Y, };
 	D3DXVECTOR2 uiTextSize	= { 100.0f ,100.0f };
 	int sStageNum = GetGemeStageNum();
-	if (sStageNum >= 5)
+	if (sStageNum >= 14)
 	{
-		D3DXCOLOR   uiTextColor = { 1.0f,0.1f,0.1f,1.0f };
+		D3DXCOLOR   uiTextColor = { 0.8f, 0.0f, 1.0f, 1.0f };
+		g_UITextBpm->SetUITextPram(uiTextPos, uiTextSize, uiTextColor, (char*)"BPMn180", FONT_WHITELINE);
+	}
+	else if (sStageNum >= 5)
+	{
+		D3DXCOLOR   uiTextColor = { 1.0f, 0.1f, 0.1f, 1.0f };
 		g_UITextBpm->SetUITextPram(uiTextPos, uiTextSize, uiTextColor, (char*)"BPMn150", FONT_WHITELINE);
 	}
 	else
@@ -268,19 +273,22 @@ void DrawSkillSelect(void)
 	);
 	//BPMテキスト
 	int sStageNum = GetGemeStageNum();
-	if (sStageNum>=5)
+	
+	if (sStageNum >= 14)
+	{
+		BPMSize += BPMAdd * 1.2f;
+		BackRingCol = D3DXCOLOR(0.8f, 0.0f, 1.0f, 1.0f);
+		BackRingrot += 7.0f;
+	}
+	else if (sStageNum>=5)
 	{
 		BPMSize += BPMAdd;
 		BackRingCol = D3DXCOLOR(0.7f, 0.1f, 0.1f, 1.0f);
 		BackRingrot += 3.5f;
-		//DrawSpriteColor(g_TextureBPM, CENTER_X, CENTER_Y, BPMSize, BPMSize / 6.0f * 5.0f,
-		//	0.5f, 0.0f, 0.5f, 1.0f, D3DXCOLOR(1.0f, 0.1f, 0.1f, 1.0f));
 	}
 	else
 	{
 		BackRingCol = D3DXCOLOR(0.1f, 0.5f, 0.1f, 1.0f);
-		//DrawSpriteColor(g_TextureBPM, CENTER_X, CENTER_Y, BPMSize, BPMSize / 6.0f * 5.0f,
-		//	0.0f, 0.0f, 0.5f, 1.0f,D3DXCOLOR(0.2f, 0.9f, 0.2f, 1.0f));
 	}
 	//BPM 大リング外側
 	GetDeviceContext()->PSSetShaderResources(0, 1,
