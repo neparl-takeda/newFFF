@@ -89,145 +89,120 @@ HRESULT InitRhythm(int stagenum)
 	switch (stagenum)
 	{
 	case 0://チュートリアル
-
 		GameSoundNo = LoadSound(filename0);
-
-		errors = 0;
-		NowBPM = BPM_120;
-		BGMError = -2400;
+		errors = 0;				//error 開始ズレ？
+		NowBPM = BPM_120;		//BPM
+		BGMError = -2400;		//長さ調整
 		tutorialerror = 0.01f;
 		break;
-	case 1://ザリガニ
 
+	case 1://EASY	//ザリガニ		//調整済
 		GameSoundNo = LoadSound(filename1);
-
-		errors = 0;
+		errors = 6;
 		NowBPM = BPM_120;
 		BGMError = -60;
 		break;
-	case 2://ウナギ
 
+	case 2://EASY	//ウナギ		//調整済
 		GameSoundNo = LoadSound(filename2);
-
 		errors = 2;
 		NowBPM = BPM_120;
 		BGMError = 0;
 		break;
-	case 3://タコ
 
+	case 3://EASY	//タコ			//調整済
 		GameSoundNo = LoadSound(filename3);
-
-		errors = -4;
+		errors = -1;
 		NowBPM = BPM_120;
 		BGMError = 430;
 		break;
-	case 4://サメ
 
-
+	case 4://EASY	//サメ			//調整済
 		GameSoundNo = LoadSound(filename4);
-
-		errors = 0;
+		errors = 2;
 		NowBPM = BPM_120;
 		BGMError = 0;
 		break;
 
-	case 5://シシャモ
-
+	case 5://EASY	//シシャモ		//調整済
 		GameSoundNo = LoadSound(filename5);
-
 		errors = 0;
 		NowBPM = BPM_150;
 		BGMError = -20;
 		break;
-	case 6://ザリガニ裏	//抜け殻
-
+	
+	case 6://HARD	//抜け殻		//調整済
 		GameSoundNo = LoadSound(filename6);
-
-		errors = 0;
+		errors = 1;
 		NowBPM = BPM_150;
 		BGMError = 10;
 		break;
-	case 7://ウナギ裏	//うな重
-
+	
+	case 7://HARD	//うな重		//調整済
 		GameSoundNo = LoadSound(filename7);
-
 		errors = 0;
 		NowBPM = BPM_150;
 		BGMError = -10;
 		break;
-	case 8://タコ裏		//シオカラ武者
 
+	case 8://HARD	//シオカラ武者	//調整済
 		GameSoundNo = LoadSound(filename8);
-
 		errors = 0;
 		NowBPM = BPM_150;
 		BGMError = -150;
 		break;
-	case 9://サメ裏		//ジョージ
 
+	case 9://HARD	//ジョージ		//調整済
 		GameSoundNo = LoadSound(filename9);
-
 		errors = -1;
 		NowBPM = BPM_150;
 		BGMError = -170;
 		break;
-	case 10://シシャモ裏 //フルアーマーザリガニ
 
+	case 10://HARD	//フルアーマー	//調整済
 		GameSoundNo = LoadSound(filename10);
-
 		errors = -1;
-		NowBPM = BPM_300;
+		NowBPM = BPM_150;
 		BGMError = 250;
 		break;
-	case 11://MYTHIC //プロトタイプザリガニ
 
+	case 11://MYTHIC //プロトタイプ	//調整済
 		GameSoundNo = LoadSound(filename11);
-
 		errors = 0;
 		NowBPM = BPM_150;
 		BGMError = 500;
 		break;
 
-	case 12://MYTHIC //ウナギドラ
-
+	case 12://MYTHIC //ウナギドラ	//調整済
 		GameSoundNo = LoadSound(filename12);
-
-		errors = -1;	//現行
+		errors = -2;	//現行
 		NowBPM = BPM_150;
 		BGMError = 120;
 		break;
 
-	case 13://MYTHIC //復讐
-
+	case 13://MYTHIC //復讐			//調整済
 		GameSoundNo = LoadSound(filename13);
-
 		errors = -1;
 		NowBPM = BPM_150;
 		BGMError = 120;
 		break;
 
-	case 14://MYTHIC //カース ジョージ
-
+	case 14://MYTHIC //カース		//調整済	//楽曲変更かも
 		GameSoundNo = LoadSound(filename14);
-
 		errors = 0;
 		NowBPM = BPM_180;
 		BGMError = -755;
 		break;
 
-	case 15://MYTHIC //ガネーシャモ
-		
+	case 15://MYTHIC //ガネシャモ	//調整済
 		GameSoundNo = LoadSound(filename15);
-
 		errors = 0;
 		NowBPM = BPM_180;
 		BGMError = -525;
 		break;
 
-	default:
-
+	default://エラー時
 		GameSoundNo = LoadSound(filename11);
-
 		errors = -1;
 		NowBPM = BPM_150;	
 		BGMError = 250;
@@ -252,8 +227,8 @@ HRESULT InitRhythm(int stagenum)
 		Notestipindex1 = 2;		sp = 10.8f;
 		break;
 
-	case BPM_300:
-		Notestipindex1 = 2;		sp = 10.8f;
+	case BPM_300:	//スピードテスト中
+		Notestipindex1 = 2;		sp = 9.5f;
 		break;
 
 	default:
