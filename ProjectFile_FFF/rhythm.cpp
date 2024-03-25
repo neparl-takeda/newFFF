@@ -83,6 +83,7 @@ HRESULT InitRhythm(int stagenum)
 	char	filename13[] = "data\\BGM\\13_Revenge_150.wav";
 	char	filename14[] = "data\\BGM\\14_Jawge_150.wav";
 	char	filename15[] = "data\\BGM\\15_Ganeshamo_150.wav";
+	//char	filename15[] = "data\\BGM\\test.wav";
 
 	tutorialerror = 0;
 	switch (stagenum)
@@ -280,13 +281,13 @@ HRESULT InitRhythm(int stagenum)
 
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = 0;
+		errors = -1;	//åªçs
 		sp = 12.0f;
 		NowBPM = BPM1;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
-		BGMError = -20;
+		BGMError = 250;
 		break;
-	
+
 	default:
 
 		GameSoundNo = LoadSound(filename11);
