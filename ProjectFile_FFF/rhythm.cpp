@@ -22,8 +22,8 @@
 #define		BPM1				(150)
 #define		BPM2				(120)
 #define		BPM3				(90)
-#define		BPM4				(185.0f)
-#define		BPM5				(205.8f)
+#define		BPM4				(180)
+#define		BPM5				(165)
 
 int			NowBPM;
 //float		NowBPM;
@@ -67,23 +67,22 @@ int Notestip[10][10]
 //BPM90は24フレームで一個
 HRESULT InitRhythm(int stagenum)
 {
-	char	filename0[] = "data\\BGM\\00_Tutorial_120.wav";
-	char	filename1[] = "data\\BGM\\01_Zarigani_120.wav";
-	char	filename2[] = "data\\BGM\\02_Unagi_120.wav";
-	char	filename3[] = "data\\BGM\\03_Tako_120.wav";
-	char	filename4[] = "data\\BGM\\04_Shark_120.wav";
-	char	filename5[] = "data\\BGM\\05_Shishamo_150.wav";
-	char	filename6[] = "data\\BGM\\06_Zarigani_150.wav";
-	char	filename7[] = "data\\BGM\\07_Unadon_150.wav";
-	char	filename8[] = "data\\BGM\\08_Shiokara_150.wav";
-	char	filename9[] = "data\\BGM\\09_Jawge_150.wav";
-	char	filename10[]= "data\\BGM\\10_FullArmor_150.wav";
+	char	filename0[]  = "data\\BGM\\00_Tutorial_120.wav";
+	char	filename1[]  = "data\\BGM\\01_Zarigani_120.wav";
+	char	filename2[]  = "data\\BGM\\02_Unagi_120.wav";
+	char	filename3[]  = "data\\BGM\\03_Tako_120.wav";
+	char	filename4[]  = "data\\BGM\\04_Shark_120.wav";
+	char	filename5[]  = "data\\BGM\\05_Shishamo_150.wav";
+	char	filename6[]  = "data\\BGM\\06_Zarigani_150.wav";
+	char	filename7[]  = "data\\BGM\\07_Unadon_150.wav";
+	char	filename8[]  = "data\\BGM\\08_Shiokara_150.wav";
+	char	filename9[]  = "data\\BGM\\09_Jawge_150.wav";
+	char	filename10[] = "data\\BGM\\10_FullArmor_150.wav";
 	char	filename11[] = "data\\BGM\\11_Prottype_150.wav";
 	char	filename12[] = "data\\BGM\\12_Unagydra_150.wav";
 	char	filename13[] = "data\\BGM\\13_Revenge_150.wav";
 	char	filename14[] = "data\\BGM\\14_Jawge_150.wav";
 	char	filename15[] = "data\\BGM\\15_Ganeshamo_150.wav";
-	//char	filename15[] = "data\\BGM\\test.wav";
 
 	tutorialerror = 0;
 	switch (stagenum)
@@ -255,11 +254,11 @@ HRESULT InitRhythm(int stagenum)
 
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = 4;
+		errors = -1;
 		sp = 12.0f;
 		NowBPM = BPM1;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
-		BGMError = -250;
+		BGMError = 120;
 		break;
 
 	case 14://MYTHIC //カース ジョージ
@@ -268,26 +267,20 @@ HRESULT InitRhythm(int stagenum)
 
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = -1;
-		sp = 12.0f;
-		NowBPM = BPM1;
+		errors = 0;
+		sp = 10.8f;
+		NowBPM = BPM4;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
-		BGMError = 120;
+		BGMError = -755;
 		break;
 
 	case 15://MYTHIC //ガネーシャモ
 		
 		GameSoundNo = LoadSound(filename15);
 
-		//Notestipindex1 = 2;
-		//indexNum = 8;
-		//errors = 0;
-		//sp = 12.0f;
-		//NowBPM = BPM1;
-		//NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
 		Notestipindex1 = 2;
 		indexNum = 8;
-		errors = -1;
+		errors = 0;
 		sp = 12.0f;
 		NowBPM = BPM1;
 		NotesT = (60.0f / (NowBPM / 60.0f)) / 2.0f;
