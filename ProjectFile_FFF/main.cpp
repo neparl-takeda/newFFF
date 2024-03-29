@@ -67,7 +67,7 @@ NOW_SCENE g_NowScene;
 static int g_Scene;//現在実行されているシーン
 bool	CtrlKey;
 
-bool isDebugFlag = true;	//デバッグモードフラグ
+bool isDebugFlag = false;	//デバッグモードフラグ
 
 //=============================================================================
 // メイン関数

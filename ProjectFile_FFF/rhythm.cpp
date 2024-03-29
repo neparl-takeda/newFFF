@@ -27,7 +27,7 @@
 #define		BPM_150				(150)
 #define		BPM_180				(180)
 #define		BPM_240				(240)	//未テスト
-#define		BPM_300				(300)	//キーボードだと無理かも
+#define		BPM_300				(300)	//キーボードだと無理かも  
 
 int			NowBPM;
 //float		NowBPM;
@@ -165,8 +165,10 @@ HRESULT InitRhythm(int stagenum)
 
 	case 10://HARD	//フルアーマー	//調整済
 		GameSoundNo = LoadSound(filename10);
-		errors = -1;
-		NowBPM = BPM_150;
+		//errors = -1;		//現行版
+		//NowBPM = BPM_150;
+		errors = 0;		//BPM300 テスト用
+		NowBPM = BPM_300;
 		BGMError = 250;
 		break;
 
@@ -232,7 +234,9 @@ HRESULT InitRhythm(int stagenum)
 		break;
 
 	case BPM_300:	//スピードテスト中
-		Notestipindex1 = 2;		sp = 9.5f;
+		//Notestipindex1 = 2;		sp = 9.5f;
+		Notestipindex1 = 2;		sp = 12.0f;
+		//Notestipindex1 = 2;		sp = 9.25f;
 		break;
 
 	default:
